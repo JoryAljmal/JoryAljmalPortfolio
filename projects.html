@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Jory ALjmal | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    @keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.projects-section {
+  text-align: center;
+  margin-top: 20px;
+  animation: fade-in 0.4s 0.2s backwards; 
+}
+
+.projects-title {
+  font-size: 48px;
+  color: white;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+}
+
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.project-card {
+  width: 300px;
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 2px solid rgba(180, 174, 232, 0.2);
+  box-shadow: 0 0 15px rgba(180, 174, 232, 0.2);
+  border-radius: 12px;
+  padding: 20px;
+  color: white;
+  text-align: center;
+  backdrop-filter: blur(4px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px rgba(180, 174, 232, 0.5);
+}
+
+.project-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin: 15px 0;
+}
+
+.project {
+  border-color: #c770f091;
+  box-shadow: 0 0 10px rgba(173, 232, 244, 0.15);
+}
+
+</style>
+<body>
+    <div class="background-dots"></div>
+    <header>
+    <p class="logo">Jory Aljmal.</p>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="underline">Home</a></li>
+        <li><a href="aboutme.html" class="underline">About me</a></li>
+        <li><a href="projects.html" class="underline">Projects</a></li>
+        <li><a href="cv.html" class="underline">CV</a></li>
+        <li><a href="contact.html" class="underline">Contact</a></li>
+      </ul>
+      </nav>
+    </header>
+
+    <section class="projects-section">
+        <h2 class="projects-title">MY PROJECTS</h2> 
+        <div class="projects-grid">
+        <div class="project-card project">
+        <h3>Laptop Showcase</h3>
+        <img src="images/laptop website.png" alt="Laptop Showcase">
+        <p>A responsive product showcase website featuring laptop details, interactive cards, and a newsletter subscription form.</p>
+        </div>
+
+        <div class="project-card project">
+        <h3>Hameash Redesign</h3>
+        <img src="images/hameash mockup.png" alt="Hameash Redesign">
+        <p>UI/UX redesign of the Hameash platform with improved typography, layout clarity, and visual hierarchy.</p>
+        </div>
+
+        <div class="project-card project">
+        <h3>My Portfolio</h3>
+        <img src="images/portfolio mockup.png" alt="This Portfolio">
+        <p>This portfolio you’re viewing! A glassmorphism-styled showcase of my work, with smooth animations and themed glow ✨</p>
+        </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+    <p class="copyright">&copy; 2025. Copyright by Jory Aljmal</p>
+    </footer>
+   
+</body>
+</html>
+
+<script>
+    const bg = document.querySelector('.background-dots');
+
+    for (let i = 0; i < 60; i++) {
+    const dot = document.createElement('span');
+    dot.style.top = `${Math.random() * 100}vh`;
+    dot.style.left = `${Math.random() * 100}vw`;
+    bg.appendChild(dot);
+    }
+</script>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Jory ALjmal | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.main-content {
+  display: grid;
+  place-items: center;
+  position: relative;
+  height: 100vh;
+  z-index: 1;
+}
+.glow-box {
+  border: 2px solid rgba(180, 174, 232, 0.4);
+  border-radius: 12px;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 10px rgba(180, 174, 232, 0.2);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  width: 800px;
+  margin-top: 650px;
+  font-size: 18px;
+  line-height: 1.6;
+  animation: fade-in 0.4s 0.2s backwards; 
+  color: white;
+
+}
+    .glow-box:hover {
+      box-shadow: 0 0 25px rgba(180, 174, 232, 0.6);
+      border-color: rgba(180, 174, 232, 0.8);
+    }
+.glow-web {
+  border: 2px solid rgba(180, 174, 232, 0.25);
+  border-radius: 12px;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 0 10px rgba(180, 174, 232, 0.15);
+  width: 800px;
+  margin-top: 400px;
+  /* margin: 100px auto; */
+  color: white;
+  line-height: 1;
+
+  opacity: 0;
+  transform: translateY(80px);
+  transition: all 0.8s ease;
+}
+.glow-web:hover { 
+  box-shadow: 0 0 25px rgba(180, 174, 232, 0.5);
+  border-color: rgba(180, 174, 232, 0.6); 
+}
+.glow-web.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.language-icons {
+  display: flex;
+  gap: 25px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.language-icons img {
+  width: 50px;
+  height: 50px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.2));
+}
+
+.language-icons img:hover {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 8px #B4AEE8);
+}
+
+.glow-designer {
+  border: 2px solid rgba(180, 174, 232, 0.25);
+  border-radius: 12px;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 0 10px rgba(180, 174, 232, 0.15);
+  width: 800px;
+  margin: 100px auto;
+  color: white;
+  line-height: 1;
+
+  opacity: 0;
+  transform: translateY(80px);
+  transition: all 0.8s ease;
+}
+.glow-designer:hover { 
+  box-shadow: 0 0 25px rgba(180, 174, 232, 0.5);
+  border-color: rgba(180, 174, 232, 0.6); 
+}
+.glow-designer.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.designer-icons {
+  display: flex;
+  gap: 25px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.designer-icons img {
+  width: 50px;
+  height: 50px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.2));
+}
+
+.designer-icons img:hover {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 8px #B4AEE8);
+}
+
+
+  </style>
+</head>
+<body>
+    <div class="background-dots"></div>
+
+    <header>
+    <p class="logo">Jory Aljmal.</p>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="underline">Home</a></li>
+        <li><a href="aboutme.html" class="underline">About me</a></li>
+        <li><a href="projects.html" class="underline">Projects</a></li>
+        <li><a href="cv.html" class="underline">CV</a></li>
+        <li><a href="contact.html" class="underline">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<div class="main-content">
+  <div class="glow-box">
+    <h2 style="font-style: italic;">Here's a little about me...</h2>
+    <p>
+      Hello! I am a computer science student, and I design and develop websites that 
+        are both elegant and accessible..I enjoy learning new web technologies and design trends to make 
+        websites that look great and work well. My goal is to become a skilled web developer who can build awesome 
+        websites and apps that people love to use. ✨
+    </p>
+  </div>
+</div>
+
+<div class="glow-web">
+  <h2 style="font-style: italic;" >.Web Development</h2>
+  <div class="language-icons">
+    <img src="images/html.svg" alt="HTML" title="HTML">
+    <img src="images/css.svg" alt="CSS" title="CSS">
+    <img src="images/js.svg" alt="JavaScript" title="JavaScript">
+    <img src="images/java.svg" alt="Java" title="Java">
+    <img src="images/c++.svg" alt="C++" title="C++">
+  </div>
+</div>
+
+  <div class="glow-designer">
+  <h2 style="font-style: italic;">.Web Designer</h2>
+  <div class="designer-icons">
+    <img src="images/figma.svg" alt="Figma" title="Figma">
+  </div>
+</div>
+
+
+    <footer class="footer">
+    <p class="copyright">&copy; 2025. Copyright by Jory Aljmal</p>
+  </footer>
+</body>
+</html>
+<script>
+  const bg = document.querySelector('.background-dots');
+
+  for (let i = 0; i < 60; i++) {
+    const dot = document.createElement('span');
+    dot.style.top = `${Math.random() * 100}vh`;
+    dot.style.left = `${Math.random() * 100}vw`;
+    bg.appendChild(dot);
+  }
+
+
+const observer = new IntersectionObserver((entries) => { entries.forEach(entry => {
+   if (entry.isIntersecting) { entry.target.classList.add("visible");}
+   });
+   }, {
+     threshold: 0.3 
+    }); 
+    const target = document.querySelector('.glow-web'); observer.observe(target);
+
+    const targets = document.querySelectorAll('.glow-web, .glow-designer');
+targets.forEach(section => observer.observe(section));
+
+
+</script>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>Jory ALjmal | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 35px;
+  animation: fade-in 0.5s 0.1s backwards;
+  box-sizing: border-box;
+}
+.detels {
+  font-size: 40px;
+  line-height: .4;
+  padding-right: 40px;
+  color: white;
+}
+
+.detels-img {
+  width: 40%;
+}
+  .typewriter {
+  white-space: nowrap;
+  }
+
+  .words::after {
+    content: '|';
+    animation: blink 0.7s infinite;
+    margin-left: 5px;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+      @keyframes fade-in {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+.find-me {
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin: 60px 0 20px 60px;
+  /* opacity: 0; */
+  transform: translateY(50px);
+  transition: 0.6s ease;
+}
+
+.find-me.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.find-me h2 {
+  font-size: 24px;
+  color: #B4AEE8;
+  margin: 0;
+}
+
+.socials {
+  display: flex;
+  gap: 16px;
+}
+
+.socials img {
+  width: 36px;
+  height: 36px;
+  transition: transform 0.3s ease;
+}
+
+.socials img:hover {
+  transform: scale(1.2);
+}
+
+  </style>
+</head>
+<body>
+  <div class="background-dots"></div>
+  <header>
+    <p class="logo">Jory Aljmal.</p>
+  <nav>
+    <ul>
+      <li><a href="index.html" class="underline">Home</a></li>
+      <li><a href="aboutme.html" class="underline">About me</a></li>
+      <li><a href="projects.html" class="underline">Projects</a></li>
+      <li><a href="cv.html" class="underline">CV</a></li>
+      <li><a href="contact.html" class="underline">Contact</a></li>
+    </ul>
+  </nav>
+  </header>
+<div class="content">
+    <div class="detels">
+      <div class="typewriter">
+        <p>Hey! It's me</p>
+        <p style="font-size: 60px;">Jory Aljmal</p>
+        <p>I'm a <span style="color: #B4AEE8;" class="words"></span></p>
+    </div>
+    </div>
+    <img src="images/mainimge.png" alt="programer" class="detels-img">
+</div>
+
+<div class="find-me" id="find-me">
+  <h1>Find me</h1>
+  <div class="socials">
+    <a href="https://github.com/JoryAljmal" target="_blank">
+      <img src="images/github.svg" alt="GitHub" />
+    </a>
+    <a href="https://www.linkedin.com/in/jory-aljmal/" target="_blank">
+      <img src="images/linkedin.svg" alt="LinkedIn" />
+    </a>
+  </div>
+</div>
+
+
+<footer class="footer">
+  <p class="copyright">&copy; 2025. Copyright by Jory Aljmal</p>
+</footer>
+  
+</body>
+<script>
+  const bg = document.querySelector('.background-dots');
+  for (let i = 0; i < 100; i++) {
+    const dot = document.createElement('span');
+    dot.style.top = `${Math.random() * 100}vh`;
+    dot.style.left = `${Math.random() * 100}vw`;
+    bg.appendChild(dot);
+  }
+
+  const words = ["developer", "web designer"];
+  let i = 0;
+  let j = 0;
+  let currentWord = '';
+  let isDeleting = false;
+  const speed = 100;
+  const target = document.querySelector('.words');
+
+  function type() {
+    currentWord = words[i];
+    if (isDeleting) j--;
+    else j++;
+
+    target.textContent = currentWord.substring(0, j);
+
+    if (!isDeleting && j === currentWord.length) {
+      isDeleting = true;
+      setTimeout(type, 1000);
+    } else if (isDeleting && j === 0) {
+      isDeleting = false;
+      i = (i + 1) % words.length;
+      setTimeout(type, 300);
+    } else {
+      setTimeout(type, speed);
+    }
+  }
+  type();
+
+const findMe = document.getElementById("find-me");
+
+const observerFindMe = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    }
+  });
+}, { threshold: 0.3 });
+
+observerFindMe.observe(findMe);
+</script>
+
+</html>

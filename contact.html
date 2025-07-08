@@ -6,245 +6,227 @@
     <link rel="stylesheet" href="style.css">
     <style>
         @keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.glow-contact {
-  border: 2px solid rgba(180, 174, 232, 0.25);
-  border-radius: 12px;
-  padding: 30px;
-  background-color: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(4px);
-  box-shadow: 0 0 10px rgba(180, 174, 232, 0.15);
-  width: 900px;
-  height: 400px;
-  margin: 80px auto;
-  color: white;
-  opacity: 0;
-  transform: translateY(80px);
-  transition: all 0.8s ease;
-}
-
-.glow-contact.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.contact-wrapper {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-}
-
-.contact-image {
-  flex: 1;
-  background-image: url('images/send mail.png');
-  background-size: cover;
-  background-position: center;
-  border-radius: 10px;
-  min-height: 400px;
-}
-
-.contact-form {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.contact-form h2 {
-  margin-bottom: 15px;
-  color: #fff;
-  font-style: italic;
-}
-
-.contact-form input,
-.contact-form textarea,
-.contact-form button {
-  width: 100%;
-  display: block;
-  box-sizing: border-box;
-  margin-bottom: 15px;
-  background-color: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.3);
-  color: white;
-  padding: 12px;
-  border-radius: 5px;
-}
-
-.send-btn {
-  position: relative;
-  background-color: #2f2f2f;
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  overflow: hidden;
-  border: none;
-  border-radius: 5px;
-  padding: 12px;
-  transition: 0.4s ease;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.send-btn .check-box {
-  width: 80px;
-  height: 80px;
-  border-radius: 30px;
-  position: absolute;
-  top: 50%;
-  right: -50px;
-  transform: translateY(-50%); /* 👈 يخليها بالنص عموديًا */
-  opacity: 0;
-  transition: 1s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.send-btn .check-box svg {
-  width: 40px;
-  margin: 20px;
-}
-
-.send-btn svg path {
-  stroke-width: 3;
-  stroke: #fff;
-  stroke-dasharray: 60;
-  stroke-dashoffset: 60;
-  stroke-linecap: round;
-}
-
-.send-btn.active {
-  background-color: #BD61E8;
-}
-
-.send-btn.active .check-box {
-  right: 0;
-  opacity: 1;
-}
-.send-btn.active #btnText {
-  margin-right: 125px;
-  transition: 0.5s ease;
-}
-.send-btn.active svg path {
-  stroke-dashoffset: 0;
-  transition: 1s ease;
-  transition-delay: 0.8s;
-}
-  </style>
+            from {
+            opacity: 0;
+            transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .glow-contact {
+            border: 2px solid rgba(180, 174, 232, 0.25);
+            border-radius: 12px;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(4px);
+            box-shadow: 0 0 10px rgba(180, 174, 232, 0.15);
+            width: 900px;
+            height: 400px;
+            margin: 80px auto;
+            color: white;
+            opacity: 0;
+            transform: translateY(80px);
+            transition: all 0.8s ease;
+        }
+        .glow-contact.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .contact-wrapper {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+        .contact-image {
+            flex: 1;
+            background-image: url('images/send mail.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            min-height: 400px;
+        }
+        .contact-form {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .contact-form h2 {
+            margin-bottom: 15px;
+            color: #fff;
+            font-style: italic;
+        }
+        .contact-form input,.contact-form textarea,.contact-form button {
+            width: 100%;
+            display: block;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+            background-color: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 12px;
+            border-radius: 5px;
+        }
+        .send-btn {
+            position: relative;
+            background-color: #2f2f2f;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            overflow: hidden;
+            border: none;
+            border-radius: 5px;
+            padding: 12px;
+            transition: 0.4s ease;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .send-btn .check-box {
+            width: 80px;
+            height: 80px;
+            border-radius: 30px;
+            position: absolute;
+            top: 50%;
+            right: -50px;
+            transform: translateY(-50%); 
+            opacity: 0;
+            transition: 1s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .send-btn .check-box svg {
+            width: 40px;
+            margin: 20px;
+        }
+        .send-btn svg path {
+            stroke-width: 3;
+            stroke: #fff;
+            stroke-dasharray: 60;
+            stroke-dashoffset: 60;
+            stroke-linecap: round;
+        }
+        .send-btn.active {
+            background-color: #BD61E8;
+        }
+        .send-btn.active .check-box {
+            right: 0;
+            opacity: 1;
+        }
+        .send-btn.active #btnText {
+            margin-right: 125px;
+            transition: 0.5s ease;
+        }
+        .send-btn.active svg path {
+            stroke-dashoffset: 0;
+            transition: 1s ease;
+            transition-delay: 0.8s;
+        }
+    </style>
 </head>
 <body>
-  <div class="background-dots"></div>
-
-  <header>
-    <p class="logo">Jory Aljmal.</p>
-    <nav>
-      <ul>
-        <li><a href="index.html" class="underline">Home</a></li>
-        <li><a href="aboutme.html" class="underline">About me</a></li>
-        <li><a href="projects.html" class="underline">Projects</a></li>
-        <li><a href="cv.html" class="underline">CV</a></li>
-        <li><a href="contact.html" class="underline">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <div class="glow-contact">
-    <div class="contact-wrapper">
-      <div class="contact-image"></div>
-      <div class="contact-form">
-        <h2>Contact with me</h2>
-        <form action="https://formspree.io/f/xrbkwgwa" method="POST">
-            <input type="text" placeholder="Full Name" required />
-            <input type="email" placeholder="Email Address" required />
-            <textarea rows="5" placeholder="Your Message" required></textarea>
-            <button type="button" id="btn" class="send-btn">
-            <span id="btnText">Submit</span>
-                <div class="check-box">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
-                    <path fill="transparent" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
-                    </svg>
-                </div>
-            </button>
-
-        </form>
-      </div>
+    <div class="background-dots"></div>
+    <header>
+        <p class="logo">Jory Aljmal.</p>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="underline">Home</a></li>
+                <li><a href="aboutme.html" class="underline">About me</a></li>
+                <li><a href="projects.html" class="underline">Projects</a></li>
+                <li><a href="cv.html" class="underline">CV</a></li>
+                <li><a href="contact.html" class="underline">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="glow-contact">
+        <div class="contact-wrapper">
+            <div class="contact-image"></div>
+            <div class="contact-form">
+                <h2>Contact with me</h2>
+                <form action="https://formspree.io/f/xrbkwgwa" method="POST">
+                    <input type="text" placeholder="Full Name" required />
+                    <input type="email" placeholder="Email Address" required />
+                    <textarea rows="5" placeholder="Your Message" required></textarea>
+                    <button type="button" id="btn" class="send-btn">
+                    <span id="btnText">Submit</span>
+                        <div class="check-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+                            <path fill="transparent" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+                            </svg>
+                        </div>
+                    </button>
+                </form>
+            </div>
+        </div>
     </div>
-  </div>
+    
+    <footer class="footer">
+        <p class="copyright">&copy; 2025. Copyright by Jory Aljmal</p>
+    </footer>
 
-  <footer class="footer">
-    <p class="copyright">&copy; 2025. Copyright by Jory Aljmal</p>
-  </footer>
-
-  <script>
-    const bg = document.querySelector('.background-dots');
-    for (let i = 0; i < 60; i++) {
-      const dot = document.createElement('span');
-      dot.style.top = `${Math.random() * 100}vh`;
-      dot.style.left = `${Math.random() * 100}vw`;
-      bg.appendChild(dot);
-    }
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
+    <script>
+        const bg = document.querySelector('.background-dots');
+        for (let i = 0; i < 60; i++) {
+        const dot = document.createElement('span');
+        dot.style.top = `${Math.random() * 100}vh`;
+        dot.style.left = `${Math.random() * 100}vw`;
+        bg.appendChild(dot);
         }
-      });
-    }, {
-      threshold: 0.3
-    });
+        const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+            }
+        });
+        },{
+            threshold: 0.3
+        });
+        
+        const contactSection = document.querySelector('.glow-contact');
+        observer.observe(contactSection);
 
-    const contactSection = document.querySelector('.glow-contact');
-    observer.observe(contactSection);
+        const btn = document.querySelector("#btn");
+        const btnText = document.querySelector("#btnText");
+        const form = document.querySelector("form");
+        const inputs = form.querySelectorAll("input, textarea");
+        
+        function isEmailValid(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+        
+        btn.onclick = () => {
+            const fullName = form.querySelector('input[type="text"]').value.trim();
+            const email = form.querySelector('input[type="email"]').value.trim();
+            const message = form.querySelector('textarea').value.trim();
+            
+            if (!fullName || !email || !message) {
+                alert("Please fill in all fields.");
+                return;
+            }
 
-  const btn = document.querySelector("#btn");
-  const btnText = document.querySelector("#btnText");
-  const form = document.querySelector("form");
-  const inputs = form.querySelectorAll("input, textarea");
+            if (!isEmailValid(email)) {
+                alert("Please enter a valid email address.");
+                return;
+            }
+            
+            btnText.innerText = "Thanks!";
+            btn.classList.add("active");
+            
+            setTimeout(() => {
+                form.reset();
+            }, 500);
 
-  function isEmailValid(email) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  }
-
-  btn.onclick = () => {
-    const fullName = form.querySelector('input[type="text"]').value.trim();
-    const email = form.querySelector('input[type="email"]').value.trim();
-    const message = form.querySelector('textarea').value.trim();
-
-    if (!fullName || !email || !message) {
-      alert("Please fill in all fields.");
-      return;
-    }
-
-    if (!isEmailValid(email)) {
-      alert("Please enter a valid email address.");
-      return;
-    }
-
-    // ✅ All good — animate and reset
-    btnText.innerText = "Thanks!";
-    btn.classList.add("active");
-
-    setTimeout(() => {
-      form.reset();
-    }, 500);
-
-    setTimeout(() => {
-      btn.classList.remove("active");
-      btnText.innerText = "Submit";
-    }, 3000);
-  };
-  </script>
+            setTimeout(() => {
+                btn.classList.remove("active");
+                btnText.innerText = "Submit";
+            }, 3000);
+        };
+    </script>
 </body>
 </html>

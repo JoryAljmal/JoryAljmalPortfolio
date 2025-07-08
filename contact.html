@@ -153,7 +153,7 @@
                     <input type="text" placeholder="Full Name" required />
                     <input type="email" placeholder="Email Address" required />
                     <textarea rows="5" placeholder="Your Message" required></textarea>
-                    <button type="button" id="btn" class="send-btn">
+                    <button type="submit" id="btn" class="send-btn">
                     <span id="btnText">Submit</span>
                         <div class="check-box">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
@@ -200,23 +200,27 @@
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
         }
         
-        btn.onclick = () => {
+        form.onsubmit = (e) => {
+        e.preventDefault();
+
             const fullName = form.querySelector('input[type="text"]').value.trim();
             const email = form.querySelector('input[type="email"]').value.trim();
             const message = form.querySelector('textarea').value.trim();
-            
+
             if (!fullName || !email || !message) {
-                alert("Please fill in all fields.");
-                return;
+            alert("Please fill in all fields.");
+            return;
             }
 
             if (!isEmailValid(email)) {
-                alert("Please enter a valid email address.");
-                return;
+            alert("Please enter a valid email address.");
+            return;
             }
-            
+
             btnText.innerText = "Thanks!";
             btn.classList.add("active");
+
+            form.submit();
             
             setTimeout(() => {
                 form.reset();

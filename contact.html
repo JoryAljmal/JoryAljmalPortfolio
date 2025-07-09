@@ -204,34 +204,79 @@
         form.onsubmit = (e) => {
         e.preventDefault();
 
-            const fullName = form.querySelector('input[type="text"]').value.trim();
-            const email = form.querySelector('input[type="email"]').value.trim();
-            const message = form.querySelector('textarea').value.trim();
+            form.addEventListener("submit", async (e) => {
+  e.preventDefault();
 
-            if (!fullName || !email || !message) {
-            alert("Please fill in all fields.");
-            return;
-            }
+  const fullName = form.querySelector('input[name="name"]').value.trim();
+  const email = form.querySelector('input[name="email"]').value.trim();
+  const message = form.querySelector('textarea[name="message"]').value.trim();
 
-            if (!isEmailValid(email)) {
-            alert("Please enter a valid email address.");
-            return;
-            }
+  if (!fullName || !email || !message) {
+    alert("Please fill in all fields.");
+    return;
+  }
 
-            btnText.innerText = "Thanks!";
-            btn.classList.add("active");
+  const data = {
+    name: fullName,
+    email: email,
+    message: message
+  };
 
-            form.submit();
+  try {
+    const response = await fetch("https://formspree.io/f/xrbkwgwa", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify(data)
+    });
+
+    if (response.ok) {
+      btnText.innerText = "Thanks!";
+      btn.classList.add("active");
+      form.reset();
+      setTimeout(() => {
+        btn.classList.remove("active");
+        btnText.innerText = "Submit";
+      }, 3000);
+    } else {
+      alert("Something went wrong. Please try again.");
+    }
+  } catch (error) {
+    alert("Error sending message.");
+  }
+});
+
+
+        //     const fullName = form.querySelector('input[type="text"]').value.trim();
+        //     const email = form.querySelector('input[type="email"]').value.trim();
+        //     const message = form.querySelector('textarea').value.trim();
+
+        //     if (!fullName || !email || !message) {
+        //     alert("Please fill in all fields.");
+        //     return;
+        //     }
+
+        //     if (!isEmailValid(email)) {
+        //     alert("Please enter a valid email address.");
+        //     return;
+        //     }
+
+        //     btnText.innerText = "Thanks!";
+        //     btn.classList.add("active");
+
+        //     form.submit();
             
-            setTimeout(() => {
-                form.reset();
-            }, 500);
+        //     setTimeout(() => {
+        //         form.reset();
+        //     }, 500);
 
-            setTimeout(() => {
-                btn.classList.remove("active");
-                btnText.innerText = "Submit";
-            }, 3000);
-        };
+        //     setTimeout(() => {
+        //         btn.classList.remove("active");
+        //         btnText.innerText = "Submit";
+        //     }, 3000);
+        // };
     </script>
 </body>
 </html>
